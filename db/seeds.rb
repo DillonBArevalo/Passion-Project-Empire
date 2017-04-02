@@ -35,16 +35,16 @@ Armor.create(name: "Full Plate", passive_defense_bonus: 15, energy_reduction: 10
 Armor.create(name: "Scale Mail", passive_defense_bonus: 10, energy_reduction: 5)
 Armor.create(name: "Leather Armor", passive_defense_bonus: 5, energy_reduction: 0)
 
-Weapon.create(name: "Long Sword", offense_bonus: 5, defense_bonus: 5, damage_bonus: 5, type_id: 2)
-Weapon.create(name: "Javelin", offense_bonus: 3, defense_bonus: 2, damage_bonus: 7, type_id: 11)
-Weapon.create(name: "Hand Axe", offense_bonus: 4, defense_bonus: 3, damage_bonus: 6, type_id: 4)
-Weapon.create(name: "Flanged Mace", offense_bonus: 4, defense_bonus: 1, damage_bonus: 8, type_id: 6)
-Weapon.create(name: "Boar Spear", offense_bonus: 7, defense_bonus: 7, damage_bonus: 3, type_id: 8)
-Weapon.create(name: "Long Bow", offense_bonus: 3, defense_bonus: 0, damage_bonus: 4, type_id: 12)
+Weapon.create(name: "Long Sword", offense_bonus: 5, defense_bonus: 5, damage_bonus: 5, weapon_type_id: 2)
+Weapon.create(name: "Javelin", offense_bonus: 3, defense_bonus: 2, damage_bonus: 7, weapon_type_id: 11)
+Weapon.create(name: "Hand Axe", offense_bonus: 4, defense_bonus: 3, damage_bonus: 6, weapon_type_id: 4)
+Weapon.create(name: "Flanged Mace", offense_bonus: 4, defense_bonus: 1, damage_bonus: 8, weapon_type_id: 6)
+Weapon.create(name: "Boar Spear", offense_bonus: 7, defense_bonus: 7, damage_bonus: 3, weapon_type_id: 8)
+Weapon.create(name: "Long Bow", offense_bonus: 3, defense_bonus: 0, damage_bonus: 4, weapon_type_id: 12)
 
 
 characters.each do |character|
-  character.classes << CharacterClass.all.sample
+  character.character_classes << CharacterClass.all.sample
   character.weapons << Weapon.all.sample
   character.armors << Armor.all.sample
 end
