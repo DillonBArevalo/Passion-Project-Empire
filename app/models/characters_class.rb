@@ -1,5 +1,5 @@
 class CharactersClass < ActiveRecord::Base
   belongs_to :character
-  belongs_to :class
+  belongs_to :character_class
 
 end

@@ -5,7 +5,7 @@ class CreateWeapons < ActiveRecord::Migration
       t.integer :offense_bonus
       t.integer :damage_bonus
       t.integer :defense_bonus
-      t.ingeger :weapon_type_id
+      t.integer :weapon_type_id
 
       t.timestamps
     end
