@@ -3,8 +3,14 @@ get '/login' do
 end
 
 post '/login' do
-  session[:id] = params[:id]
-  redirect "/users/#{params[:id]}"
+  @user = User.find_by(name: params[:name])
+  if @user && @user.password == params[:password]
+    session[:id] = @user.id
+    redirect "/users/#{@user.id}"
+  else
+    @errors = ["Username or Password Incorrect!"]
+    erb :'sessions/login'
+  end
 end
 
 delete '/logout' do
