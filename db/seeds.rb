@@ -1,0 +1,15 @@
+# Create weapon types
+WeaponType.create(name: "Short Sword", range: 1, hands_required: 1)
+WeaponType.create(name: "Sword", range: 1, hands_required: 1)
+WeaponType.create(name: "Great Sword", range: 1, hands_required: 2)
+WeaponType.create(name: "Small Axe", range: 1, hands_required: 1)
+WeaponType.create(name: "Large Axe", range: 1, hands_required: 2)
+WeaponType.create(name: "Mace", range: 1, hands_required: 1)
+WeaponType.create(name: "Maul", range: 1, hands_required: 2)
+WeaponType.create(name: "Spear", range: 2, hands_required: 2)
+WeaponType.create(name: "Short Spear", range: 1, hands_required: 1)
+WeaponType.create(name: "Pole Weapon", range: 2, hands_required: 2)
+WeaponType.create(name: "Thrown Weapon", range: 5, hands_required: 1)
+WeaponType.create(name: "Bow", range: 10, hands_required: 2)
+
+User.create(username: "Tom", password: "tomtom")
