@@ -1,4 +1,10 @@
-class CreateClasses < ActiveRecord::Migration 
-  def change 
-  end 
+class CreateClasses < ActiveRecord::Migration
+  def change
+    create_table :classes do |t|
+      t.string :name
+      t.text :bonus
+
+      t.timestamps
+    end
+  end
 end
