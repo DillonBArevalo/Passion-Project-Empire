@@ -1,4 +1,10 @@
-class CreateCharacters < ActiveRecord::Migration 
-  def change 
-  end 
+class CreateCharacters < ActiveRecord::Migration
+  def change
+    create_table :characters do |t|
+      t.string :name, null: false
+      t.integer :user_id, null: false
+
+      t.timestamps
+    end
+  end
 end
