@@ -4,6 +4,6 @@ class WeaponType < ActiveRecord::Base
   has_many :characters, through: :characters_weapons
   has_many :users, through: :characters
 
-  validates :name, :range, :hands, presence: true
+  validates :name, :range, :hands_required, presence: true
 
 end
