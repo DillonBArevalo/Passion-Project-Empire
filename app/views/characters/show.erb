@@ -1,5 +1,16 @@
 <h1><%= @character.name %></h1>
 
+<% if @character.user.id == session[:id] %>
+  <form action="/characters/<%= @character.id %>/edit" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="submit" value="Edit this character">
+  </form>
+  <form action="/characters/<%= @character.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete this character">
+  </form>
+<% end %>
+
 <%= @character.name %> has the following equipment:
 <br>
 Weapons:
@@ -17,6 +28,7 @@ And has the following classes:
 <% @character.character_classes.each do |character_class| %>
   <%= character_class.name %>
 <% end %>
+<br>
 <br>
 
 This equipment gives them the following values:
