@@ -1,8 +1,7 @@
 <h1><%= @character.name %></h1>
 
 <% if @character.user.id == session[:id] %>
-  <form action="/characters/<%= @character.id %>/edit" method="POST">
-    <input type="hidden" name="_method" value="PUT">
+  <form action="/characters/<%= @character.id %>/edit" method="GET">
     <input type="submit" value="Edit this character">
   </form>
   <form action="/characters/<%= @character.id %>" method="POST">
