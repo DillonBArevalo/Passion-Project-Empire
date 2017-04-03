@@ -3,7 +3,7 @@
 <h2>Your characters:</h2>
 
 <% @characters.each do |character| %>
-  <a href="/users/<%= @user.id %>/characters/<%= character.id %>"><%= character.name %></a>
+  <a href="/characters/<%= character.id %>"><%= character.name %></a>
 
   <% end %>
 <% end %>
