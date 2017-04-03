@@ -1,0 +1,9 @@
+<h1>All Characters:</h1>
+
+<% if session[:id] %>
+  <form action="/characters/new" method="GET">
+    <input type="submit" value="Create a new character!">
+  </form>
+<% end %>
+
+<%= erb :'characters/_characters_shower' %>
