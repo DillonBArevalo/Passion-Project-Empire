@@ -1,0 +1,39 @@
+<h1><%= @character.name %></h1>
+
+<%= @character.name %> has the following equipment:
+<br>
+Weapons:
+<% @character.weapons.each do |weapon| %>
+  <%= weapon.name %>
+<% end %>
+<br>
+Armor:
+<% @character.armors.each do |armor| %>
+  <%= armor.name %>
+<% end %>
+<br>
+<br>
+And has the following classes:
+<% @character.character_classes.each do |character_class| %>
+  <%= character_class.name %>
+<% end %>
+<br>
+
+This equipment gives them the following values:
+<br>
+Offense bonus: <%= @character.weapons.first.offense_bonus %>
+<br>
+Damage bonus: <%= @character.weapons.first.damage_bonus %>
+<br>
+Active defense bonus: <%= @character.weapons.first.defense_bonus %>
+<br>
+Passive defense bonus: <%= @character.armors.first.passive_defense_bonus %>
+<br>
+Energy reduction: <%= @character.armors.first.energy_reduction %>
+<br><br>
+
+Their class gives them the following bonus: <%= @character.character_classes.first.bonus %>
+<br>
+
+<br>
+They can attack at a range of: <%= @character.weapon_types.first.range %> squares
