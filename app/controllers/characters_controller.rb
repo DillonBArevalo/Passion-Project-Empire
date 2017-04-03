@@ -4,11 +4,15 @@ get '/characters' do
 end
 
 get '/characters/new' do
+  @character_classes = CharacterClass.all
+  @weapons = Weapon.all
+  @armors = Armor.all
   erb :'characters/new'
 end
 
 post '/characters' do
-
+  p params
+  "made it"
 end
 
 get '/characters/:id' do
