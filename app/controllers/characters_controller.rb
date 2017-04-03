@@ -4,7 +4,7 @@ get '/characters' do
 end
 
 get '/characters/new' do
-
+  erb :'characters/new'
 end
 
 post '/characters' do
@@ -12,7 +12,8 @@ post '/characters' do
 end
 
 get '/characters/:id' do
-
+  @character = Character.find(params[:id])
+  erb :'characters/show'
 end
 
 get '/characters/:id/edit' do
