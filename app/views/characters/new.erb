@@ -1,25 +1,25 @@
 <h1>Create a new character!</h1>
 
 <form action="/characters" method="POST">
-<label>Name:</label>
-<input type="text" name="name"><br>
-<label>Class:</label>
-<select name="character_class">
-<% @character_classes.each do |character_class| %>
-  <option value="<%= character_class.id %>"><%= character_class.name %></option>
-<% end %>
-</select><br>
-<label>Weapon:</label>
-<select name="armor">
-<% @armors.each do |armor| %>
-  <option value="<%= armor.id %>"><%= armor.name %></option>
-<% end %>
-</select><br>
-<label>Weapon:</label>
-<select name="weapon">
-<% @weapons.each do |weapon| %>
-  <option value="<%= weapon.id %>"><%= weapon.name %></option>
-<% end %>
-</select><br>
-<input type="submit" name="submit" value="Create this character">
+  <label>Name:</label>
+  <input type="text" name="name"><br>
+  <label>Class:</label>
+  <select name="character_class">
+    <% @character_classes.each do |character_class| %>
+      <option value="<%= character_class.id %>"><%= character_class.name %></option>
+    <% end %>
+  </select><br>
+  <label>Weapon:</label>
+  <select name="armor">
+    <% @armors.each do |armor| %>
+      <option value="<%= armor.id %>"><%= armor.name %></option>
+    <% end %>
+  </select><br>
+  <label>Weapon:</label>
+  <select name="weapon">
+    <% @weapons.each do |weapon| %>
+      <option value="<%= weapon.id %>"><%= weapon.name %></option>
+    <% end %>
+  </select><br>
+  <input type="submit" name="submit" value="Create this character">
 </form>

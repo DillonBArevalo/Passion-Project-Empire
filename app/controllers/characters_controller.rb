@@ -33,7 +33,11 @@ get '/characters/:id' do
 end
 
 get '/characters/:id/edit' do
-
+  @character = Character.find(params[:id])
+  @character_classes = CharacterClass.all
+  @weapons = Weapon.all
+  @armors = Armor.all
+  erb :'characters/edit'
 end
 
 put '/characters/:id' do
