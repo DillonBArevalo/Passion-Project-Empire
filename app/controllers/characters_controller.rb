@@ -11,15 +11,18 @@ get '/characters/new' do
 end
 
 post '/characters' do
-  @character = Character.new(name: params[:name])
-  if @character.save
+  if !params[:name].empty?
+    @character = Character.create(name: params[:name])
     User.find(session[:id]).characters << @character
     @character.character_classes << CharacterClass.find(params[:character_class])
     @character.weapons << Weapon.find(params[:weapon])
     @character.armors << Armor.find(params[:armor])
     redirect '/characters'
   else
-    @errors = @character.errors.full_messages
+    @character_classes = CharacterClass.all
+    @weapons = Weapon.all
+    @armors = Armor.all
+    @errors = ["You must give your character a name!"]
     erb :'characters/new'
   end
 end
