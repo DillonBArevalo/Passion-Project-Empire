@@ -1,5 +1,6 @@
 get '/characters' do
-
+  @characters = Character.all
+  erb :'characters/index'
 end
 
 get '/characters/new' do

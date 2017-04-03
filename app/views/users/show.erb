@@ -2,25 +2,4 @@
 
 <h2>Your characters:</h2>
 
-<% @characters.each do |character| %>
-  <p><a href="/characters/<%= character.id %>"><%= character.name %></a>
-  <br>
-  Classes:
-  <% character.character_classes.each do |character_class| %>
-    <%= character_class.name %>
-  <% end %>
-  <br>
-  Weapons:
-  <% character.weapons.each do |weapon| %>
-    <%= weapon.name %>
-  <% end %>
-  <br>
-  Armor:
-  <% character.armors.each do |armor| %>
-    <%= armor.name %>
-  <% end %>
-
-  </p>
-  <br>
-  <br>
-<% end %>
+<%= erb :'characters/_characters_shower' %>
