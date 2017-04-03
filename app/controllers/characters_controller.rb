@@ -1,5 +1,5 @@
 get '/characters' do
-  @characters = Character.all
+  @characters = Character.all.reverse
   erb :'characters/index'
 end
 
@@ -41,9 +41,25 @@ get '/characters/:id/edit' do
 end
 
 put '/characters/:id' do
-
+  @character = Character.find(params[:id])
+  if !params[:name].empty?
+    @character.update(name: params[:name])
+    User.find(session[:id]).characters << @character
+    @character.character_classes = [CharacterClass.find(params[:character_class])]
+    @character.weapons = [Weapon.find(params[:weapon])]
+    @character.armors = [Armor.find(params[:armor])]
+    redirect '/characters'
+  else
+    @character_classes = CharacterClass.all
+    @weapons = Weapon.all
+    @armors = Armor.all
+    @errors = ["You can't un-name your character, silly!"]
+    erb :'characters/new'
+  end
 end
 
 delete '/characters/:id' do
-
+  @character = Character.find(params[:id])
+  @character.destroy
+  redirect '/characters'
 end
