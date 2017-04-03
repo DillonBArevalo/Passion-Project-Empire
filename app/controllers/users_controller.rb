@@ -18,17 +18,8 @@ post '/users' do
 end
 
 get '/users/:id' do
-
+  @user = User.find(params[:id])
+  @characters = @user.characters
+  erb :'users/show'
 end
 
-get '/users/:id/edit' do
-
-end
-
-put '/users/:id' do
-
-end
-
-delete '/users/:id' do
-
-end
