@@ -1,5 +1,6 @@
 get '/users' do
-  #all users
+  @users = User.all
+  erb :'users/index'
 end
 
 get '/users/new' do

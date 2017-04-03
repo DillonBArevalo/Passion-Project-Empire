@@ -1,5 +1,12 @@
+<% if @user.id == session[:id] %>
 <h1>Welcome to your page, <%= @user.name %></h1>
 
 <h2>Your characters:</h2>
+<% else %>
+
+<h1>Welcome to <%= @user.name %>'s page!</h1>
+
+<h2><%= @user.name %>'s Characters:</h2>
+<% end %>
 
 <%= erb :'characters/_characters_shower' %>
