@@ -27,10 +27,18 @@
   <input type="submit" name="logout" value="Logout">
   </form>
 <% else %>
-  <a href="/users/new">Register</a>
+  <a href="/users/new">Register</a> |
+  <a href="/login">Login</a>
 <% end %>
 
 </header>
+<% if @errors %>
+  <ul>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
   <%= yield %>
 </body>
 </html>
