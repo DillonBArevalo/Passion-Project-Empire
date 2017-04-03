@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>Empire Character Creator</title>
+</head>
+<body>
+<header>
+<a href="/">Home</a> |
+<% if session[:id] %>
+  <a href="/users/<%= session[:id] %>">Profile</a>
+  <form action="/logout" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="logout" value="Logout">
+  </form>
+<% else %>
+  <a href="/users/new">Register</a>
+<% end %>
+
+</header>
+  <%= yield %>
+</body>
+</html>
