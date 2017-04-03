@@ -11,8 +11,17 @@ get '/characters/new' do
 end
 
 post '/characters' do
-  p params
-  "made it"
+  @character = Character.new(name: params[:name])
+  if @character.save
+    User.find(session[:id]).characters << @character
+    @character.character_classes << CharacterClass.find(params[:character_class])
+    @character.weapons << Weapon.find(params[:weapon])
+    @character.armors << Armor.find(params[:armor])
+    redirect '/characters'
+  else
+    @errors = @character.errors.full_messages
+    erb :'characters/new'
+  end
 end
 
 get '/characters/:id' do
