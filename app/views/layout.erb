@@ -20,7 +20,7 @@
 <body>
 <header>
 <a href="/">Home</a> |
-<% if session[:id] %>
+<% if logged_in? %>
   <a href="/users/<%= session[:id] %>">Profile</a>
   <form action="/logout" method="POST">
   <input type="hidden" name="_method" value="DELETE">

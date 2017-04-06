@@ -10,4 +10,12 @@ helpers do
   def current_user
     User.find(session[:id])
   end
+
+  def current_user?(user)
+    if logged_in?
+      user == current_user
+    else
+      false
+    end
+  end
 end
