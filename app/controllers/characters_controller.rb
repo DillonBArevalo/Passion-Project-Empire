@@ -13,7 +13,7 @@ end
 post '/characters' do
   if !params[:name].empty?
     @character = Character.create(name: params[:name])
-    User.find(session[:id]).characters << @character
+    current_user.characters << @character
     @character.character_classes << CharacterClass.find(params[:character_class])
     @character.weapons << Weapon.find(params[:weapon])
     @character.armors << Armor.find(params[:armor])
@@ -44,7 +44,7 @@ put '/characters/:id' do
   @character = Character.find(params[:id])
   if !params[:name].empty?
     @character.update(name: params[:name])
-    User.find(session[:id]).characters << @character
+    current_user.characters << @character
     @character.character_classes = [CharacterClass.find(params[:character_class])]
     @character.weapons = [Weapon.find(params[:weapon])]
     @character.armors = [Armor.find(params[:armor])]

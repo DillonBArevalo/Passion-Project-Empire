@@ -1,6 +1,6 @@
 <h1><%= @character.name %></h1>
 
-<% if @character.user.id == session[:id] %>
+<% if current_user?(@character.user) %>
   <form action="/characters/<%= @character.id %>/edit" method="GET">
     <input type="submit" value="Edit this character">
   </form>
