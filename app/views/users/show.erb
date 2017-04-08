@@ -1,5 +1,7 @@
-<% if @user.id == session[:id] %>
+<% if current_user?(@user) %>
 <h1>Welcome to your page, <%= @user.name %></h1>
+
+<%= erb :'characters/_new_character_button' %>
 
 <h2>Your characters:</h2>
 <% else %>
