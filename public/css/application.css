@@ -2,7 +2,9 @@ body {
   /*background-color: #984b43;*/
 }
 
-
+.toggleable {
+  display: none;
+}
 
 .character-card {
   border: 1px solid #18121e;

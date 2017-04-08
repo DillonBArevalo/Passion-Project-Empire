@@ -1,5 +1,8 @@
 get '/characters' do
   @characters = Character.all.reverse
+  @character_classes = CharacterClass.all
+  @weapons = Weapon.all
+  @armors = Armor.all
   erb :'characters/index'
 end
 
