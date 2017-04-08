@@ -20,7 +20,11 @@ post '/characters' do
     @character.character_classes << CharacterClass.find(params[:character_class])
     @character.weapons << Weapon.find(params[:weapon])
     @character.armors << Armor.find(params[:armor])
-    redirect '/characters'
+    if request.xhr?
+      erb :''
+    else
+      redirect '/characters'
+    end
   else
     @character_classes = CharacterClass.all
     @weapons = Weapon.all
