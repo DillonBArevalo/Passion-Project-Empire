@@ -21,7 +21,7 @@ post '/characters' do
     @character.weapons << Weapon.find(params[:weapon])
     @character.armors << Armor.find(params[:armor])
     if request.xhr?
-      erb :''
+      erb :'characters/_character_show', layout: false, locals: {character: @character}
     else
       redirect '/characters'
     end

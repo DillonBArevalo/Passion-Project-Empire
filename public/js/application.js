@@ -31,10 +31,10 @@ var newCharacterFormListener = function(){
     })
 
     call.done(function(data){
-      console.log(data)
+      $("#all-character-cards").prepend(data)
     });
 
-
+// create call failure option that adds errors
 
   })
 }
