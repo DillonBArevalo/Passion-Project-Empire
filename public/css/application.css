@@ -1,0 +1,18 @@
+body {
+  /*background-color: #984b43;*/
+}
+
+
+
+.character-card {
+  border: 1px solid #18121e;
+  padding: 1%;
+  max-width: 30%;
+  min-width: 250px;
+  /*background-color: #eac67a;
+  color: #233237;*/
+  background-color: #84625b;
+  display: inline-block;
+  margin: 1em;
+}
+
