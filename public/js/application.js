@@ -2,6 +2,7 @@ $(document).ready(function() {
   newCharacterButtonListener();
   newCharacterFormListener();
   loginListener();
+  weaponsLinkListener();
 });
 
 var newCharacterButtonListener = function(){
@@ -35,6 +36,7 @@ var newCharacterFormListener = function(){
       $("#all-character-cards").prepend(data);
       form.trigger("reset");
       form.toggle();
+      $(".weapons-page").hide();
     });
 
     call.fail(function(){
@@ -47,8 +49,8 @@ var loginListener = function(){
   $("#login").on("click", function(e){
     e.preventDefault();
 
-    var link = $(this)
-    var action = link.attr("href")
+    var link = $(this);
+    var action = link.attr("href");
 
     var call = $.ajax({
       url: action,
@@ -57,7 +59,26 @@ var loginListener = function(){
 
     call.done(function(data){
       link.toggle();
-      link.after(data)
-    })
+      link.after(data);
+    });
+  });
+}
+
+var weaponsLinkListener = function(){
+  $("body").on("click", ".weapons-link", function(e){
+    e.preventDefault();
+
+    var link = $(this);
+    var action = link.attr("href");
+
+    var call = $.ajax({
+      url: action,
+      type: 'GET'
+    });
+
+    call.done(function(data){
+      link.toggle();
+      link.closest("form").after(data);
+    });
   });
 }

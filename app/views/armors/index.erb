@@ -1,7 +1,9 @@
-<h1>All Armors:</h1>
+<div class="armors-page">
+  <h1>All Armors:</h1>
 
-<div class="all-armors">
-<% @armors.each do |armor| %>
-  <%= erb :'armors/_armor_card', locals: {armor: armor} %>
-<% end %>
+  <div class="all-armors">
+  <% @armors.each do |armor| %>
+    <%= erb :'armors/_armor_card', locals: {armor: armor} %>
+  <% end %>
+  </div>
 </div>

@@ -1,7 +1,10 @@
-<h1>All Classes:</h1>
+<div class="character-classes-page">
+  <h1>All Classes:</h1>
 
-<div class="all-character-classes">
-  <% @character_classes.each do |character_class| %>
-    <%= erb :'character_classes/_character_class_card', locals: {character_class: character_class} %>
-  <% end %>
+  <div class="all-character-classes">
+    <% @character_classes.each do |character_class| %>
+      <%= erb :'character_classes/_character_class_card', locals: {character_class: character_class} %>
+    <% end %>
+  </div>
+
 </div>
