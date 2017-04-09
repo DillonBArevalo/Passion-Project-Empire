@@ -1,7 +1,7 @@
 <h1>All Characters:</h1>
 
 <% if logged_in? %>
-  <div id="new-character-button">
+  <div class="new-character-button">
     <%= erb :'characters/_new_character_button' %>
   </div>
 
@@ -11,5 +11,5 @@
 <% end %>
 
 <div id="all-character-cards">
-<%= erb :'characters/_characters_shower' %>
+  <%= erb :'characters/_characters_shower' %>
 </div>

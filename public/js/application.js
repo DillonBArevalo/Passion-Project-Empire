@@ -5,7 +5,7 @@ $(document).ready(function() {
 });
 
 var newCharacterButtonListener = function(){
-  $("#new-character-button").on("click", function(e){
+  $(".new-character-button").on("click", function(e){
     e.preventDefault();
     $(".character-form").toggle();
   });
