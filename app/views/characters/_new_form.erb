@@ -6,14 +6,14 @@
     <% @character_classes.each do |character_class| %>
       <option value="<%= character_class.id %>"><%= character_class.name %></option>
     <% end %>
-  </select> <a href="/character_classes">View all classes</a>
+  </select> <a class="classes-link" href="/character_classes">View all classes</a>
   <br>
   <label>Armor:</label>
   <select name="armor">
     <% @armors.each do |armor| %>
       <option value="<%= armor.id %>"><%= armor.name %></option>
     <% end %>
-  </select> <a href="/armors">View all armors</a>
+  </select> <a class="armors-link" href="/armors">View all armors</a>
   <br>
   <label>Weapon:</label>
   <select name="weapon">
@@ -21,7 +21,7 @@
       <option value="<%= weapon.id %>"><%= weapon.name %></option>
     <% end %>
   </select>
-  <a href="/weapons">View all weapons</a>
+  <a class="weapons-link" href="/weapons">View all weapons</a>
   <br>
   <input type="submit" name="submit" value="Create this character">
 </form>

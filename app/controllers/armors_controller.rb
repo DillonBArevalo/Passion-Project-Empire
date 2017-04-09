@@ -1,4 +1,8 @@
 get '/armors' do
   @armors = Armor.all
-  erb :'armors/index'
+  if request.xhr?
+    erb :'armors/index', layout: false
+  else
+    erb :'armors/index'
+  end
 end
