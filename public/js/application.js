@@ -65,6 +65,10 @@ var loginListener = function(){
       link.toggle();
       link.after(data);
     });
+
+    call.fail(function(){
+      console.log("Failed");
+    });
   });
 }
 
@@ -84,6 +88,10 @@ var weaponsLinkListener = function(){
       link.toggle();
       link.closest("form").after(data);
     });
+
+    call.fail(function(){
+      console.log("Failed");
+    });
   });
 }
 
@@ -102,6 +110,10 @@ var armorsLinkListener = function(){
     call.done(function(data){
       link.toggle();
       link.closest("form").after(data);
+    });
+
+    call.fail(function(){
+      console.log("Failed");
     });
   });
 }
@@ -124,7 +136,7 @@ var classesLinkListener = function(){
     });
 
     call.fail(function(){
-      console.log("Failed")
-    })
+      console.log("Failed");
+    });
   });
 }
