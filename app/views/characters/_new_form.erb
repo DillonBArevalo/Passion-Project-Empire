@@ -7,7 +7,7 @@
       <option value="<%= character_class.id %>"><%= character_class.name %></option>
     <% end %>
   </select><br>
-  <label>Weapon:</label>
+  <label>Armor:</label>
   <select name="armor">
     <% @armors.each do |armor| %>
       <option value="<%= armor.id %>"><%= armor.name %></option>
@@ -18,6 +18,8 @@
     <% @weapons.each do |weapon| %>
       <option value="<%= weapon.id %>"><%= weapon.name %></option>
     <% end %>
-  </select><br>
+  </select>
+  <a href="/weapons">View all weapons</a>
+  <br>
   <input type="submit" name="submit" value="Create this character">
 </form>
