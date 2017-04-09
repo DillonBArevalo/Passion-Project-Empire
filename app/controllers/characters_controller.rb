@@ -26,11 +26,15 @@ post '/characters' do
       redirect '/characters'
     end
   else
-    @character_classes = CharacterClass.all
-    @weapons = Weapon.all
-    @armors = Armor.all
-    @errors = ["You must give your character a name!"]
-    erb :'characters/new'
+    if request.xhr?
+      406
+    else
+      @character_classes = CharacterClass.all
+      @weapons = Weapon.all
+      @armors = Armor.all
+      @errors = ["You must give your character a name!"]
+      erb :'characters/new'
+    end
   end
 end
 

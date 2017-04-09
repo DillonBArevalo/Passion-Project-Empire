@@ -34,6 +34,10 @@ var newCharacterFormListener = function(){
       $("#all-character-cards").prepend(data)
     });
 
+    call.fail(function(){
+      $("#errors").text("Character must be named!")
+    })
+
 // create call failure option that adds errors
 
   })
