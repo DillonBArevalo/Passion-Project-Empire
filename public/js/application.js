@@ -4,6 +4,7 @@ $(document).ready(function() {
   loginListener();
   weaponsLinkListener();
   armorsLinkListener();
+  classesLinkListener();
 });
 
 var newCharacterButtonListener = function(){
@@ -36,9 +37,10 @@ var newCharacterFormListener = function(){
     call.done(function(data){
       $("#all-character-cards").prepend(data);
       form.trigger("reset");
-      form.toggle();
+      $(".character-form").toggle();
       $(".weapons-page").hide();
       $(".armors-page").hide();
+      $(".character-classes-page").hide();
     });
 
     call.fail(function(){
@@ -101,5 +103,28 @@ var armorsLinkListener = function(){
       link.toggle();
       link.closest("form").after(data);
     });
+  });
+}
+
+var classesLinkListener = function(){
+  $("body").on("click", ".classes-link", function(e){
+    e.preventDefault();
+
+    var link = $(this);
+    var action = link.attr("href");
+
+    var call = $.ajax({
+      url: action,
+      type: 'GET'
+    });
+
+    call.done(function(data){
+      link.toggle();
+      link.closest("form").after(data);
+    });
+
+    call.fail(function(){
+      console.log("Failed")
+    })
   });
 }
