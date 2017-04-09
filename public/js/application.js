@@ -3,6 +3,7 @@ $(document).ready(function() {
   newCharacterFormListener();
   loginListener();
   weaponsLinkListener();
+  armorsLinkListener();
 });
 
 var newCharacterButtonListener = function(){
@@ -37,6 +38,7 @@ var newCharacterFormListener = function(){
       form.trigger("reset");
       form.toggle();
       $(".weapons-page").hide();
+      $(".armors-page").hide();
     });
 
     call.fail(function(){
@@ -66,6 +68,25 @@ var loginListener = function(){
 
 var weaponsLinkListener = function(){
   $("body").on("click", ".weapons-link", function(e){
+    e.preventDefault();
+
+    var link = $(this);
+    var action = link.attr("href");
+
+    var call = $.ajax({
+      url: action,
+      type: 'GET'
+    });
+
+    call.done(function(data){
+      link.toggle();
+      link.closest("form").after(data);
+    });
+  });
+}
+
+var armorsLinkListener = function(){
+  $("body").on("click", ".armors-link", function(e){
     e.preventDefault();
 
     var link = $(this);
