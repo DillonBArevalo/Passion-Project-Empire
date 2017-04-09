@@ -33,6 +33,7 @@ var newCharacterFormListener = function(){
 
     call.done(function(data){
       $("#all-character-cards").prepend(data);
+      form.trigger("reset");
     });
 
     call.fail(function(){
