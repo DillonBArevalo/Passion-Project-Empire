@@ -6,7 +6,8 @@
     <% @character_classes.each do |character_class| %>
       <option value="<%= character_class.id %>"><%= character_class.name %></option>
     <% end %>
-  </select><br>
+  </select> <a href="/character_classes">View all classes</a>
+  <br>
   <label>Armor:</label>
   <select name="armor">
     <% @armors.each do |armor| %>
