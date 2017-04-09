@@ -36,7 +36,7 @@ var newCharacterFormListener = function(){
     });
 
     call.fail(function(){
-      $("#errors").text("Character must be named!");
+      $("#errors").find("ul").append("<li>Character must be named!</li>");
     });
   });
 }
