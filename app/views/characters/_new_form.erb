@@ -12,7 +12,8 @@
     <% @armors.each do |armor| %>
       <option value="<%= armor.id %>"><%= armor.name %></option>
     <% end %>
-  </select><br>
+  </select> <a href="/armors">View all armors</a>
+  <br>
   <label>Weapon:</label>
   <select name="weapon">
     <% @weapons.each do |weapon| %>
