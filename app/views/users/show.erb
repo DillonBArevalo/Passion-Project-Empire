@@ -1,7 +1,13 @@
 <% if current_user?(@user) %>
 <h1>Welcome to your page, <%= @user.name %></h1>
 
-<%= erb :'characters/_new_character_button' %>
+<div class="new-character-button">
+  <%= erb :'characters/_new_character_button' %>
+</div>
+<div class="character-form toggleable">
+  <%= erb :'characters/_new_form' %>
+</div>
+
 
 <h2>Your characters:</h2>
 <% else %>
@@ -11,4 +17,6 @@
 <h2><%= @user.name %>'s Characters:</h2>
 <% end %>
 
-<%= erb :'characters/_characters_shower' %>
+<div id="all-character-cards">
+  <%= erb :'characters/_characters_shower' %>
+</div>

@@ -2,7 +2,14 @@ body {
   /*background-color: #984b43;*/
 }
 
+#errors {
+  color: red;
+  font-size: larger;
+}
 
+.toggleable {
+  display: none;
+}
 
 .character-card {
   border: 1px solid #18121e;

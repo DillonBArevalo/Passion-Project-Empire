@@ -28,10 +28,11 @@
   </form>
 <% else %>
   <a href="/users/new">Register</a> |
-  <a href="/login">Login</a>
+  <a href="/login" id="login">Login</a>
 <% end %>
 
 </header>
+<div id="errors">
 <% if @errors %>
   <ul>
   <% @errors.each do |error| %>
@@ -39,6 +40,7 @@
   <% end %>
   </ul>
 <% end %>
+</div>
   <%= yield %>
 </body>
 </html>

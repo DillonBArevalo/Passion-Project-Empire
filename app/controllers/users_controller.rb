@@ -21,6 +21,9 @@ end
 get '/users/:id' do
   @user = User.find(params[:id])
   @characters = @user.characters
+  @character_classes = CharacterClass.all
+  @weapons = Weapon.all
+  @armors = Armor.all
   erb :'users/show'
 end
 

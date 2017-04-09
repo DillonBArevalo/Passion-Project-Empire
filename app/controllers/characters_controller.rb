@@ -1,5 +1,8 @@
 get '/characters' do
   @characters = Character.all.reverse
+  @character_classes = CharacterClass.all
+  @weapons = Weapon.all
+  @armors = Armor.all
   erb :'characters/index'
 end
 
@@ -17,13 +20,21 @@ post '/characters' do
     @character.character_classes << CharacterClass.find(params[:character_class])
     @character.weapons << Weapon.find(params[:weapon])
     @character.armors << Armor.find(params[:armor])
-    redirect '/characters'
+    if request.xhr?
+      erb :'characters/_character_show', layout: false, locals: {character: @character}
+    else
+      redirect '/characters'
+    end
   else
-    @character_classes = CharacterClass.all
-    @weapons = Weapon.all
-    @armors = Armor.all
-    @errors = ["You must give your character a name!"]
-    erb :'characters/new'
+    if request.xhr?
+      406
+    else
+      @character_classes = CharacterClass.all
+      @weapons = Weapon.all
+      @armors = Armor.all
+      @errors = ["You must give your character a name!"]
+      erb :'characters/new'
+    end
   end
 end
 
