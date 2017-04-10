@@ -1,5 +1,22 @@
 body {
-  /*background-color: #984b43;*/
+  background-color: #e9dccd;
+}
+
+header {
+  background-color: #e3bab3;
+  padding: .5em;
+  border-radius: 5px;
+}
+
+h1 {
+  background-color: #613a43;
+  padding: .5em;
+  border-radius: 15px;
+  color: #e9dccd;
+}
+
+.button {
+  /*border-radius: 10px;*/
 }
 
 #logout {
@@ -46,6 +63,7 @@ body {
   background-color: #e84040;
   display: inline-block;
   margin: 1em;
+  border-radius: 5px;
 }
 
 .weapon-card {
@@ -57,6 +75,7 @@ body {
   background-color: #85b3f7;
   display: inline-block;
   margin: 1em;
+  border-radius: 5px;
 }
 
 .armor-card {
@@ -68,6 +87,7 @@ body {
   background-color: #e066ff;
   display: inline-block;
   margin: 1em;
+  border-radius: 5px;
 }
 
 .character-class-card {
@@ -79,5 +99,6 @@ body {
   background-color: #ffa53f;
   display: inline-block;
   margin: 1em;
+  border-radius: 5px;
 }
 
