@@ -21,10 +21,9 @@
 <header>
 <a href="/">Home</a> |
 <% if logged_in? %>
-  <a href="/users/<%= session[:id] %>">Profile</a>
-  <form action="/logout" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" name="logout" value="Logout">
+  <a href="/users/<%= session[:id] %>">Profile</a> | <form id="logout-form" action="/logout" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input id="logout" type="submit" name="logout" value="Logout">
   </form>
 <% else %>
   <a href="/users/new">Register</a> |

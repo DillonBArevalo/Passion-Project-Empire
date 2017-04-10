@@ -2,6 +2,32 @@ body {
   /*background-color: #984b43;*/
 }
 
+#logout {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  line-height: 1;
+  color: #0000ee;
+}
+
+#logout:active {
+  color: red;
+}
+
+#logout:focus {
+  outline: none;
+}
+
+#logout:visited {
+  color: purple;
+}
+
+#logout-form {
+  display: inline-block;
+}
+
 #errors {
   color: red;
   font-size: larger;
