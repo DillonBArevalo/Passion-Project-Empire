@@ -38,15 +38,26 @@ var newCharacterFormListener = function(){
       $("#all-character-cards").prepend(data);
       form.trigger("reset");
       $(".character-form").toggle();
-      $(".weapons-page").hide();
-      $(".armors-page").hide();
-      $(".character-classes-page").hide();
+      removeCards();
+      showCardLinks();
     });
 
     call.fail(function(){
       $("#errors").find("ul").append("<li>Character must be named!</li>");
     });
   });
+}
+
+var showCardLinks = function(){
+  $(".weapons-link").show();
+  $(".armors-link").show();
+  $(".classes-link").show();
+}
+
+var removeCards = function(){
+  $(".weapons-page").remove();
+  $(".armors-page").remove();
+  $(".character-classes-page").remove();
 }
 
 var loginListener = function(){
