@@ -1,12 +1,12 @@
-<h1><%= @character.name %></h1>
+<h2><%= @character.name %></h2>
 
 <% if current_user?(@character.user) %>
   <form action="/characters/<%= @character.id %>/edit" method="GET">
-    <input type="submit" value="Edit this character">
+    <input class="button" type="submit" value="Edit this character">
   </form>
   <form action="/characters/<%= @character.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete this character">
+    <input class="button" type="submit" value="Delete this character">
   </form>
 <% end %>
 

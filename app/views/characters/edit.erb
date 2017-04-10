@@ -1,4 +1,4 @@
-<h1>Create a new character!</h1>
+<h1>Edit your character!</h1>
 
 <form action="/characters/<%= @character.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT">
@@ -34,5 +34,5 @@
       ><%= weapon.name %></option>
     <% end %>
   </select><br>
-  <input type="submit" name="submit" value="Set new choices">
+  <input class="button" type="submit" name="submit" value="Set new choices">
 </form>
