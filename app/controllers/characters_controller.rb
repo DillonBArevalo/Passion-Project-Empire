@@ -10,7 +10,11 @@ get '/characters/new' do
   @character_classes = CharacterClass.all
   @weapons = Weapon.all
   @armors = Armor.all
-  erb :'characters/new'
+  if request.xhr?
+    erb :'characters/_new_form', layout: false
+  else
+    erb :'characters/new'
+  end
 end
 
 post '/characters' do

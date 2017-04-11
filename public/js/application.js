@@ -2,16 +2,73 @@ $(document).ready(function() {
   newCharacterButtonListener();
   newCharacterFormListener();
   loginListener();
+  formLinkListeners();
+  extraCardHeaderListeners();
+});
+
+var extraCardHeaderListeners = function(){
+  armorsHeaderListener();
+  weaponsHeaderListener();
+  characterClassesHeaderListener();
+}
+
+var armorsHeaderListener = function(){
+  $("body").on("click", ".armors-header", function(){
+    $(".armors-page").remove();
+    $(".armors-link").show();
+  })
+}
+
+var weaponsHeaderListener = function(){
+  $("body").on("click", ".weapons-header", function(){
+    $(".weapons-page").remove();
+    $(".weapons-link").show();
+  })
+}
+
+var characterClassesHeaderListener = function(){
+  $("body").on("click", ".character-classes-header", function(){
+    $(".character-classes-page").remove();
+    $(".classes-link").show();
+  })
+}
+
+var formLinkListeners = function() {
   weaponsLinkListener();
   armorsLinkListener();
   classesLinkListener();
-});
+}
 
 var newCharacterButtonListener = function(){
-  $(".new-character-button").on("click", function(e){
+  $(".new-character-button").on("submit", "#new-character-button", function(e){
     e.preventDefault();
-    $(".character-form").toggle();
+    var formDiv = $(".character-form")
+    if(formDiv.children().length === 0){
+      //ajax
+      fetchCharacterForm($(this));
+    }else{
+      formDiv.toggle();
+    }
   });
+}
+
+var fetchCharacterForm = function(form){
+  var action = form.attr("action");
+  var method = form.attr("method")
+
+  var call = $.ajax({
+    url: action,
+    type: method
+  })
+
+  call.done(function(data){
+    $(".character-form").append(data)
+  })
+
+  call.fail(function(response){
+    console.log(response)
+    console.log("FAILURE")
+  })
 }
 
 var newCharacterFormListener = function(){
