@@ -2,16 +2,48 @@ $(document).ready(function() {
   newCharacterButtonListener();
   newCharacterFormListener();
   loginListener();
+  formLinkListeners();
+});
+
+// ajax fetch the form with new character button and put it in the div.
+// deal with toggling/fetching and making sure they don't stack up
+
+var formLinkListeners = function() {
   weaponsLinkListener();
   armorsLinkListener();
   classesLinkListener();
-});
+}
 
 var newCharacterButtonListener = function(){
-  $(".new-character-button").on("click", function(e){
+  $(".new-character-button").on("submit", "#new-character-button", function(e){
     e.preventDefault();
-    $(".character-form").toggle();
+    var formDiv = $(".character-form")
+    if(formDiv.children().length === 0){
+      //ajax
+      fetchCharacterForm($(this));
+    }else{
+      formDiv.toggle();
+    }
   });
+}
+
+var fetchCharacterForm = function(form){
+  var action = form.attr("action");
+  var method = form.attr("method")
+
+  var call = $.ajax({
+    url: action,
+    type: method
+  })
+
+  call.done(function(data){
+    $(".character-form").append(data)
+  })
+
+  call.fail(function(response){
+    console.log(response)
+    console.log("FAILURE")
+  })
 }
 
 var newCharacterFormListener = function(){
