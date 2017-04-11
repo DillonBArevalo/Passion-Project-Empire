@@ -3,10 +3,35 @@ $(document).ready(function() {
   newCharacterFormListener();
   loginListener();
   formLinkListeners();
+  extraCardHeaderListeners();
 });
 
-// ajax fetch the form with new character button and put it in the div.
-// deal with toggling/fetching and making sure they don't stack up
+var extraCardHeaderListeners = function(){
+  armorsHeaderListener();
+  weaponsHeaderListener();
+  characterClassesHeaderListener();
+}
+
+var armorsHeaderListener = function(){
+  $("body").on("click", ".armors-header", function(){
+    $(".armors-page").remove();
+    $(".armors-link").show();
+  })
+}
+
+var weaponsHeaderListener = function(){
+  $("body").on("click", ".weapons-header", function(){
+    $(".weapons-page").remove();
+    $(".weapons-link").show();
+  })
+}
+
+var characterClassesHeaderListener = function(){
+  $("body").on("click", ".character-classes-header", function(){
+    $(".character-classes-page").remove();
+    $(".classes-link").show();
+  })
+}
 
 var formLinkListeners = function() {
   weaponsLinkListener();
