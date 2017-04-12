@@ -84,3 +84,7 @@ h1 {
   padding: .5em;
   background-color: silver;
 }
+
+#login-form {
+  display: inline-block;
+}
