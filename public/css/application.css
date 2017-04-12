@@ -50,55 +50,37 @@ h1 {
   font-size: larger;
 }
 
-.toggleable {
-  display: none;
-}
-
 .character-card {
-  border: 1px solid #18121e;
-  padding: 1%;
-  max-width: 30%;
-  min-width: 250px;
-  /*color: #233237;*/
   background-color: #e84040;
-  display: inline-block;
-  margin: 1em;
-  border-radius: 5px;
 }
 
 .weapon-card {
-  border: 1px solid #18121e;
-  padding: 1%;
-  max-width: 30%;
-  min-width: 250px;
-  /*color: #233237;*/
   background-color: #85b3f7;
-  display: inline-block;
-  margin: 1em;
-  border-radius: 5px;
 }
 
 .armor-card {
-  border: 1px solid #18121e;
-  padding: 1%;
-  max-width: 30%;
-  min-width: 250px;
-  /*color: #233237;*/
   background-color: #e066ff;
-  display: inline-block;
-  margin: 1em;
-  border-radius: 5px;
 }
 
 .character-class-card {
+  background-color: #ffa53f;
+}
+
+.card {
   border: 1px solid #18121e;
   padding: 1%;
   max-width: 30%;
   min-width: 250px;
-  /*color: #233237;*/
-  background-color: #ffa53f;
   display: inline-block;
   margin: 1em;
   border-radius: 5px;
 }
 
+#new-character-form {
+  border: 1px solid #18121e;
+  border-radius: 15px;
+  max-width: 350px;
+  margin: .5em;
+  padding: .5em;
+  background-color: silver;
+}
